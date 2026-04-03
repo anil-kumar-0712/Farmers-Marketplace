@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard - Farmer Marketplace</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Navbar - Admin Only -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">🌱 Farmer Marketplace</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="admin.html" class="btn-nav">Admin Dashboard</a></li>
+        <li><a href="login.html" onclick="logout()">Logout</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header">
+    <h1>👩‍💼 Admin Dashboard</h1>
+    <p>Manage users and monitor platform statistics</p>
+  </header>
+
+  <!-- Stats Cards -->
+  <div class="admin-stats">
+    <div class="stat-card">
+      <h3 id="total-farmers">0</h3>
+      <p>Total Farmers</p>
+    </div>
+    <div class="stat-card">
+      <h3 id="total-buyers">0</h3>
+      <p>Total Buyers</p>
+    </div>
+    <div class="stat-card">
+      <h3 id="total-transactions">0</h3>
+      <p>Total Transactions</p>
+    </div>
+    <div class="stat-card">
+      <h3 id="total-revenue">₹0</h3>
+      <p>Revenue Summary</p>
+    </div>
+  </div>
+
+  <!-- Manage Users Table -->
+  <div class="admin-table-section">
+    <h2 class="section-title">Manage Users</h2>
+    <div class="search-filter-bar">
+      <input type="text" id="search-user" class="search-input" placeholder="🔍 Search user by name or email...">
+    </div>
+    <table class="admin-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Role</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="users-table-body">
+        <!-- Users dynamically added -->
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Transactions Table -->
+  <div class="admin-table-section">
+    <h2 class="section-title">Recent Transactions</h2>
+    <table class="admin-table">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Crop</th>
+          <th>Farmer</th>
+          <th>Qty</th>
+          <th>Amount</th>
+        </tr>
+      </thead>
+      <tbody id="transactions-table-body">
+        <!-- Transactions dynamically added -->
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-bottom">
+        &copy; 2024 Farmer Marketplace. Admin Dashboard.
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Farmer Marketplace - Smart Digital Agriculture Platform</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">🌱 Farmer Marketplace</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="buyer.html">Marketplace</a></li>
+        <li><a href="prediction.html">Demand Prediction</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="login.html" class="btn-nav">Login / Register</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Smart Digital Farmer Marketplace</h1>
+      <p>Eliminate Middlemen | Predict Demand | Increase Profits</p>
+      <div class="hero-buttons">
+        <a href="login.html" class="btn btn-primary">🌱 Sell Crops</a>
+        <a href="buyer.html" class="btn btn-outline">🛒 Buy Crops</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Statistics Section -->
+  <section class="stats-section">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <div class="stat-number" id="stat-farmers">0</div>
+        <div class="stat-label">Farmers Registered</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number" id="stat-buyers">0</div>
+        <div class="stat-label">Active Buyers</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number" id="stat-crops">0</div>
+        <div class="stat-label">Crops Listed</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number" id="stat-transactions">0</div>
+        <div class="stat-label">Total Transactions</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features">
+    <h2 class="section-title">Why Choose Our Platform?</h2>
+    <div class="features-grid">
+      <div class="feature-card animate-on-scroll">
+        <div class="feature-icon">🤝</div>
+        <h3>Direct Farmer–Buyer Interaction</h3>
+        <p>Connect directly without intermediaries. Build trust and get fair prices for your produce.</p>
+      </div>
+      <div class="feature-card animate-on-scroll">
+        <div class="feature-icon">💰</div>
+        <h3>Transparent Pricing</h3>
+        <p>Clear, upfront pricing. Compare rates across farmers and make informed decisions.</p>
+      </div>
+      <div class="feature-card animate-on-scroll">
+        <div class="feature-icon">📊</div>
+        <h3>ML-Based Demand Prediction</h3>
+        <p>AI-powered forecasts help you plan crops and inventory based on market demand.</p>
+      </div>
+      <div class="feature-card animate-on-scroll">
+        <div class="feature-icon">♻️</div>
+        <h3>Reduced Crop Wastage</h3>
+        <p>Better demand matching means less surplus and more sustainable agriculture.</p>
+      </div>
+      <div class="feature-card animate-on-scroll">
+        <div class="feature-icon">🌿</div>
+        <h3>Sustainable Agriculture Support</h3>
+        <p>Support eco-friendly farming practices and build a greener future.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about-section">
+    <h2>About Farmer Marketplace</h2>
+    <p>We are building a sustainable digital agriculture ecosystem. Our platform bridges the gap between farmers and buyers, enabling transparent transactions, fair pricing, and data-driven decisions. Join us in revolutionizing how agriculture markets operate.</p>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials-section">
+    <h2 class="section-title">What Our Users Say</h2>
+    <div class="testimonials-grid">
+      <div class="testimonial-card animate-on-scroll">
+        <div class="star-rating">★★★★★</div>
+        <p class="testimonial-text">"This platform changed my life! I now sell directly to buyers and get fair prices. No more middlemen eating my profits."</p>
+        <div class="testimonial-author">Raj Kumar</div>
+        <div class="testimonial-role">Farmer, Punjab</div>
+      </div>
+      <div class="testimonial-card animate-on-scroll">
+        <div class="star-rating">★★★★★</div>
+        <p class="testimonial-text">"Fresh produce at transparent prices. The demand prediction feature helps us plan our inventory perfectly."</p>
+        <div class="testimonial-author">Fresh Foods Ltd</div>
+        <div class="testimonial-role">Buyer, Mumbai</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" id="contact">
+    <div class="footer-content">
+      <div>
+        <h4>Contact</h4>
+        <p>Email: contact@farmermarketplace.com</p>
+        <p>Phone: +1 (555) 123-4567</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <a href="index.html">Home</a><br>
+        <a href="login.html">Login</a><br>
+        <a href="buyer.html">Marketplace</a><br>
+        <a href="prediction.html">Demand Prediction</a>
+      </div>
+      <div>
+        <h4>Follow Us</h4>
+        <div class="social-links">
+          <a href="#">📘</a>
+          <a href="#">🐦</a>
+          <a href="#">📷</a>
+        </div>
+      </div>
+      <div>
+        <h4>Newsletter</h4>
+        <p>Subscribe for updates</p>
+        <form class="newsletter-form" id="newsletter-form">
+          <input type="email" placeholder="Your email" required>
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2024 Farmer Marketplace. All rights reserved. Sustainable Digital Agriculture.
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+  <script>
+    // Animated counters
+    function animateCounter(el, target) {
+      let current = 0;
+      const step = Math.ceil(target / 30);
+      const timer = setInterval(() => {
+        current += step;
+        if (current >= target) {
+          el.textContent = target;
+          clearInterval(timer);
+        } else {
+          el.textContent = current;
+        }
+      }, 50);
+    }
+
+    function initStats() {
+      const farmers = JSON.parse(localStorage.getItem('farmerMarketplace_farmers') || '[]').length;
+      const buyers = JSON.parse(localStorage.getItem('farmerMarketplace_buyers') || '[]').length;
+      const crops = JSON.parse(localStorage.getItem('farmerMarketplace_crops') || '[]').length;
+      const transactions = JSON.parse(localStorage.getItem('farmerMarketplace_transactions') || '[]').length;
+
+      // Use actual data, with minimum for demo appeal
+      const f = Math.max(farmers, 12);
+      const b = Math.max(buyers, 8);
+      const c = Math.max(crops, 25);
+      const t = Math.max(transactions, 50);
+
+      animateCounter(document.getElementById('stat-farmers'), f);
+      animateCounter(document.getElementById('stat-buyers'), b);
+      animateCounter(document.getElementById('stat-crops'), c);
+      animateCounter(document.getElementById('stat-transactions'), t);
+    }
+
+    // Scroll animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+
+    // Newsletter
+    document.getElementById('newsletter-form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      alert('Thank you for subscribing!');
+      e.target.reset();
+    });
+
+    initStats();
+  </script>
+</body>
+</html>

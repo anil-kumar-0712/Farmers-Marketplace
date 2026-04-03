@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buyer Dashboard - Farmer Marketplace</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Navbar - Buyer Only -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">🌱 Farmer Marketplace</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="buyer.html" class="btn-nav">Buyer Dashboard</a></li>
+        <li><a href="prediction.html">Demand Prediction</a></li>
+        <li>
+          <a href="#order-history-section" class="cart-icon">
+            🛒 Cart <span class="cart-badge" id="cart-badge">0</span>
+          </a>
+        </li>
+        <li><a href="login.html" onclick="logout()">Logout</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header">
+    <h1>🛒 Buyer Dashboard</h1>
+    <p>Browse crops, compare prices, and place orders directly from farmers</p>
+  </header>
+
+  <!-- Search & Filter Bar -->
+  <div class="search-filter-bar">
+    <input type="text" id="search-crop" class="search-input" placeholder="🔍 Search crop by name (live search)...">
+    <select id="filter-price" class="filter-select">
+      <option value="all">All Prices</option>
+      <option value="low">Low to High</option>
+      <option value="high">High to Low</option>
+    </select>
+    <select id="filter-crop-type" class="filter-select">
+      <option value="all">All Crops</option>
+      <option value="Wheat">Wheat</option>
+      <option value="Rice">Rice</option>
+      <option value="Corn">Corn</option>
+      <option value="Tomato">Tomato</option>
+      <option value="Potato">Potato</option>
+    </select>
+    <button class="btn btn-primary" id="compare-btn">Compare Prices</button>
+  </div>
+
+  <!-- Compare Bar (fixed at bottom when 2 crops selected) -->
+  <div class="compare-bar" id="compare-bar">
+    <span id="compare-text">Select 2 crops to compare</span>
+    <button class="btn btn-outline" id="compare-view-btn" style="display:none;">View Comparison</button>
+  </div>
+
+  <!-- Crop Cards Display -->
+  <div id="buyer-crops-container" class="cards-grid">
+    <!-- Crop cards dynamically rendered -->
+  </div>
+
+  <!-- Order History Section -->
+  <section id="order-history-section">
+    <h2 class="section-title">Order History</h2>
+    <div id="order-history-container">
+      <!-- Orders dynamically rendered -->
+    </div>
+  </section>
+
+  <!-- Order Confirmation Modal -->
+  <div class="modal-overlay" id="order-modal">
+    <div class="modal-content">
+      <span class="modal-close" id="order-modal-close">&times;</span>
+      <h2>Order Confirmation</h2>
+      <div id="order-summary"></div>
+      <button class="btn-submit" id="confirm-order-btn">Confirm Order</button>
+    </div>
+  </div>
+
+  <!-- Compare Modal -->
+  <div class="modal-overlay" id="compare-modal">
+    <div class="modal-content">
+      <span class="modal-close" id="compare-modal-close">&times;</span>
+      <h2>Price Comparison</h2>
+      <div id="compare-content"></div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div>
+        <h4>Contact</h4>
+        <p>Email: contact@farmermarketplace.com</p>
+      </div>
+      <div class="footer-bottom">
+        &copy; 2024 Farmer Marketplace. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+  <script src="js/buyer.js"></script>
+</body>
+</html>

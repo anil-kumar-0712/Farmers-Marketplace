@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Farmer Dashboard - Farmer Marketplace</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Navbar - Farmer Only -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">🌱 Farmer Marketplace</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="farmer.html" class="btn-nav">Farmer Dashboard</a></li>
+        <li><a href="buyer.html">Marketplace</a></li>
+        <li><a href="prediction.html">Demand Prediction</a></li>
+        <li><a href="login.html" onclick="logout()">Logout</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header">
+    <h1>👨‍🌾 Farmer Dashboard</h1>
+    <p id="farmer-welcome">Register, list your crops, and connect directly with buyers</p>
+  </header>
+
+  <!-- Profile Card (shown when logged in) -->
+  <div id="profile-card" class="profile-card" style="display: none;">
+    <div class="profile-avatar">👨‍🌾</div>
+    <h3 id="profile-name">Farmer Name</h3>
+    <p id="profile-email">email@example.com</p>
+    <p id="profile-mobile">+91 98765 43210</p>
+  </div>
+
+  <!-- Module Tabs -->
+  <div class="module-tabs" id="module-tabs">
+    <button class="tab-btn" data-tab="register" id="tab-register">Registration</button>
+    <button class="tab-btn" data-tab="crop-listing">List Crops</button>
+  </div>
+
+  <!-- Farmer Registration Form -->
+  <div id="register" class="tab-content">
+    <div class="form-section">
+      <h2>Farmer Registration</h2>
+      <form id="farmer-registration-form">
+        <div class="form-group">
+          <label for="farmer-name">Name</label>
+          <input type="text" id="farmer-name" placeholder="Enter your full name" required>
+        </div>
+        <div class="form-group">
+          <label for="farmer-email">Email</label>
+          <input type="email" id="farmer-email" placeholder="Enter your email" required>
+        </div>
+        <div class="form-group">
+          <label for="farmer-mobile">Mobile</label>
+          <input type="tel" id="farmer-mobile" placeholder="Enter your mobile number" required>
+        </div>
+        <div class="form-group">
+          <label for="farmer-password">Password</label>
+          <input type="password" id="farmer-password" placeholder="Create a password" required minlength="6">
+        </div>
+        <button type="submit" class="btn-submit">Register</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Crop Listing Form -->
+  <div id="crop-listing" class="tab-content active">
+    <div class="form-section">
+      <h2>List Your Crop</h2>
+      <button class="btn btn-primary" id="add-crop-btn" style="margin-bottom: 1rem;">+ Add New Crop</button>
+      <form id="crop-listing-form">
+        <div class="form-group">
+          <label for="crop-name">Crop Name</label>
+          <select id="crop-name" required>
+            <option value="">Select Crop</option>
+            <option value="Wheat">Wheat</option>
+            <option value="Rice">Rice</option>
+            <option value="Corn">Corn</option>
+            <option value="Cotton">Cotton</option>
+            <option value="Sugarcane">Sugarcane</option>
+            <option value="Tomato">Tomato</option>
+            <option value="Potato">Potato</option>
+            <option value="Onion">Onion</option>
+            <option value="Mango">Mango</option>
+            <option value="Banana">Banana</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="crop-quantity">Quantity (kg)</label>
+          <input type="number" id="crop-quantity" placeholder="Enter quantity in kg" required min="1">
+        </div>
+        <div class="form-group">
+          <label for="crop-price">Price per kg (₹)</label>
+          <input type="number" id="crop-price" placeholder="Enter price per kg" required min="0" step="0.01">
+        </div>
+        <div class="form-group">
+          <label>Upload Image (UI only)</label>
+          <div class="upload-zone">📷 Click to upload crop image</div>
+        </div>
+        <button type="submit" class="btn-submit">Submit</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Add Crop Modal -->
+  <div class="modal-overlay" id="add-crop-modal">
+    <div class="modal-content">
+      <span class="modal-close" id="modal-close">&times;</span>
+      <h2>Add New Crop</h2>
+      <form id="modal-crop-form">
+        <div class="form-group">
+          <label for="modal-crop-name">Crop Name</label>
+          <select id="modal-crop-name" required>
+            <option value="">Select Crop</option>
+            <option value="Wheat">Wheat</option>
+            <option value="Rice">Rice</option>
+            <option value="Corn">Corn</option>
+            <option value="Tomato">Tomato</option>
+            <option value="Potato">Potato</option>
+            <option value="Onion">Onion</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="modal-crop-quantity">Quantity (kg)</label>
+          <input type="number" id="modal-crop-quantity" required min="1">
+        </div>
+        <div class="form-group">
+          <label for="modal-crop-price">Price per kg (₹)</label>
+          <input type="number" id="modal-crop-price" required min="0" step="0.01">
+        </div>
+        <button type="submit" class="btn-submit">Add Crop</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- My Listed Crops Section -->
+  <section>
+    <h2 class="section-title">My Listed Crops</h2>
+    <div id="my-crops-container" class="cards-grid">
+      <!-- Crop cards dynamically added -->
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div>
+        <h4>Contact</h4>
+        <p>Email: contact@farmermarketplace.com</p>
+      </div>
+      <div class="footer-bottom">
+        &copy; 2024 Farmer Marketplace. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+  <script src="js/farmer.js"></script>
+</body>
+</html>
